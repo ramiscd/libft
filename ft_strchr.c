@@ -1,44 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/21 19:31:33 by rdamasce          #+#    #+#             */
-/*   Updated: 2025/07/24 21:11:49 by rdamasce         ###   ########.fr       */
+/*   Created: 2025/07/24 20:31:54 by rdamasce          #+#    #+#             */
+/*   Updated: 2025/07/24 21:13:02 by rdamasce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
-// #include <stdio.h>
+#include <stdio.h>
 
-void	*ft_memset(void *str, int c, size_t n)
+char	*ft_strchr(const char *string, int c)
 {
-	unsigned char	*pstr;
-	unsigned int	i;
+	char	*ptr;
 
-	pstr = str;
-	i = 0;
-	while (i < n)
+	ptr = (char *)string;
+	while (*ptr != 0)
 	{
-		pstr[i] = c;
-		i++;
+		if (*ptr == c)
+		{
+			return (ptr);
+		}
+		ptr++;
 	}
-	return (str);
+	return (NULL);
 }
 
-void	ft_bzero(void *s, size_t nbyte)
+/* int main(void)
 {
-	ft_memset(s, 0, nbyte);
-}
-
-/* int main(void) {
-  char str[] = "This is a string";
-  printf("Antes: %s\n", str);
-
-  ft_bzero(str, 6);
-  printf("Depois: %s\n", str);
-
-  return 0;
+	char buffer1[] = "computer program";
+  	char * ptr;
+  	int    ch = 'p';
+ 
+  	// ptr = strchr( buffer1, ch );
+	ptr = ft_strchr( buffer1, ch );
+  	printf( "The first occurrence of %c in '%s' is '%s'\n", ch, buffer1, ptr );
 } */

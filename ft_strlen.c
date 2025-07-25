@@ -6,13 +6,13 @@
 /*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 19:32:23 by rdamasce          #+#    #+#             */
-/*   Updated: 2025/07/18 19:44:16 by rdamasce         ###   ########.fr       */
+/*   Updated: 2025/07/24 21:10:33 by rdamasce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_strlen(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i] != '\0')

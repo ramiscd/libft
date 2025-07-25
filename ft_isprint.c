@@ -6,13 +6,13 @@
 /*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 20:11:19 by rdamasce          #+#    #+#             */
-/*   Updated: 2025/07/18 20:16:48 by rdamasce         ###   ########.fr       */
+/*   Updated: 2025/07/24 21:08:57 by rdamasce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isprint(int prt)
+int	ft_isprint(int prt)
 {
-	if(prt >= 32 && prt <= 126)
+	if (prt >= 32 && prt <= 126)
 	{
 		return (1);
 	}

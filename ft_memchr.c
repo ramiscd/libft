@@ -6,21 +6,20 @@
 /*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 21:09:06 by rdamasce          #+#    #+#             */
-/*   Updated: 2025/07/21 21:55:31 by rdamasce         ###   ########.fr       */
+/*   Updated: 2025/07/24 21:09:08 by rdamasce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // #include <stdio.h>
 #include <string.h>
 
-void *ft_memchr(const void *s, int c, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-
 	while (n != 0)
 	{
 		if (*(char *)s == c)
 		{
-			return((void *)s);
+			return ((void *)s);
 		}
 		else
 		{
@@ -28,7 +27,7 @@ void *ft_memchr(const void *s, int c, size_t n)
 			n--;
 		}
 	}
-	return(NULL);
+	return (NULL);
 }
 
 /* int main(void)

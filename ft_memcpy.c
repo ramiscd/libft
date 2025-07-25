@@ -6,18 +6,18 @@
 /*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 20:02:51 by rdamasce          #+#    #+#             */
-/*   Updated: 2025/07/21 20:57:07 by rdamasce         ###   ########.fr       */
+/*   Updated: 2025/07/24 21:12:47 by rdamasce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <stdio.h>
 
-void *ft_memcpy(void *dest_str, const void * src_str, size_t n)
+void	*ft_memcpy(void *dest_str, const void *src_str, size_t n)
 {
-	unsigned char *d;
-	const unsigned char *s;
-	size_t i;
+	unsigned char		*d;
+	const unsigned char	*s;
+	size_t				i;
 
 	d = (unsigned char *)dest_str;
 	s = (unsigned const char *)src_str;
@@ -27,11 +27,10 @@ void *ft_memcpy(void *dest_str, const void * src_str, size_t n)
 		d[i] = s[i];
 		i++;
 	}
-
 	return (dest_str);
 }
 
-int main(void)
+/* int main(void)
 {
 	char source[] = "This is the source string";
 	char target[] = "This is the target string";
@@ -42,4 +41,4 @@ int main(void)
 
 	printf("After ft_memcpy, target becames \"%s\"\n", target);
 	return (0);
-}
+} */
