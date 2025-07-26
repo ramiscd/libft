@@ -1,41 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/24 20:31:54 by rdamasce          #+#    #+#             */
-/*   Updated: 2025/07/24 23:04:22 by rdamasce         ###   ########.fr       */
+/*   Created: 2025/07/25 19:05:05 by rdamasce          #+#    #+#             */
+/*   Updated: 2025/07/25 20:14:59 by rdamasce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <stdio.h>
 
-char	*ft_strchr(const char *string, int c)
+void	*ft_memmove(void *dest, const void *src, size_t count)
 {
-	unsigned char	*ptr;
+	char *pdest;
+	char *psrc;
+	size_t i;
 
-	ptr = (unsigned char *)string;
-	while (*ptr != 0)
+	pdest = (char *)dest;
+	psrc = (char *)src;
+	i = 0;
+
+	while (psrc[i] != '\0' && i < count)
 	{
-		if (*ptr == c)
-		{
-			return ((char *)ptr);
-		}
-		ptr++;
+		pdest[i] = psrc[i];
+		i++;
 	}
-	return (NULL);
+	
+	return((void *)dest);
 }
 
-/* int main(void)
+/* int	main(void)
 {
-	char buffer1[] = "computer program";
-  	char * ptr;
-  	int    ch = 'p';
- 
-  	// ptr = strchr( buffer1, ch );
-	ptr = ft_strchr( buffer1, ch );
-  	printf( "The first occurrence of %c in '%s' is '%s'\n", ch, buffer1, ptr );
+	char src[] = "Hello World";
+	char dest[12];
+
+	char *res = ft_memmove(dest, src, 3);
+	printf("%s", res);
+
+	return (0);
 } */

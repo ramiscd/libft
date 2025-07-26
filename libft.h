@@ -6,7 +6,7 @@
 /*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 21:13:13 by rdamasce          #+#    #+#             */
-/*   Updated: 2025/07/24 21:15:04 by rdamasce         ###   ########.fr       */
+/*   Updated: 2025/07/24 23:02:40 by rdamasce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,6 @@ int		ft_strlen(char *str);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	ft_tolower(char c);
 char	ft_toupper(char c);
+char	*ft_strchr(const char *string, int c);
 
 #endif

@@ -1,41 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/24 20:31:54 by rdamasce          #+#    #+#             */
-/*   Updated: 2025/07/24 23:04:22 by rdamasce         ###   ########.fr       */
+/*   Created: 2025/07/24 22:10:08 by rdamasce          #+#    #+#             */
+/*   Updated: 2025/07/24 23:01:50 by rdamasce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include <stdio.h>
+#include <string.h>
 
-char	*ft_strchr(const char *string, int c)
+char	*ft_strstr(const char *string, int c)
 {
-	unsigned char	*ptr;
+	char	*ptr;
 
-	ptr = (unsigned char *)string;
-	while (*ptr != 0)
+	while (*string)
 	{
-		if (*ptr == c)
+		if (*string == c)
 		{
-			return ((char *)ptr);
+			ptr = (char *)string;
 		}
-		ptr++;
+		string++;
 	}
-	return (NULL);
+	if ((void *)ptr != NULL)
+	{
+		return (ptr);
+	}
+	else
+	{
+		return (NULL);
+	}
 }
 
-/* int main(void)
+/* int	main(void)
 {
-	char buffer1[] = "computer program";
-  	char * ptr;
-  	int    ch = 'p';
- 
-  	// ptr = strchr( buffer1, ch );
-	ptr = ft_strchr( buffer1, ch );
-  	printf( "The first occurrence of %c in '%s' is '%s'\n", ch, buffer1, ptr );
+	char str[] = "minha string";
+	int c = 'i';
+
+	char *res = ft_strstr(str, c);
+	printf("O último caractere da str: \"%s\" é %s \n" , str, res);
 } */
