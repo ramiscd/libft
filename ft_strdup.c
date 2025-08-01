@@ -1,52 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/29 21:04:42 by rdamasce          #+#    #+#             */
-/*   Updated: 2025/08/01 19:50:01 by rdamasce         ###   ########.fr       */
+/*   Created: 2025/08/01 19:10:20 by rdamasce          #+#    #+#             */
+/*   Updated: 2025/08/01 19:47:22 by rdamasce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-int	ft_atoi(char *str)
+char	*ft_strdup(const char *string)
 {
-	unsigned int	i;
-	int				signal;
-	int				res;
+	char	*ptr;
+	int		i;
 
 	i = 0;
-	signal = 1;
-	res = 0;
-	if (str[i] == ' ' || str[i] == '\t' || str[i] == '\n')
+	ptr = (char *) malloc(ft_strlen((char *)string) * sizeof(char));
+	if (ptr == NULL)
 	{
-		i++;
+		return (NULL);
 	}
-	if (str[i] == '+' || str[i] == '-')
+	else
 	{
-		if (str[i] == '-')
-			signal = -1;
-		i++;
+		while (string[i] != '\0')
+		{
+			ptr[i] = string[i];
+			i++;
+		}
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		res *= 10;
-		res += str[i] - '0';
-		i++;
-	}
-	return (res * signal);
+	return (ptr);
 }
 
-/* int main(void)
+/* int	main(void)
 {
-	char str1[] = "123";
+	char string[] = "texto para copiar";
+	char *new_srting;
 
-	int num1 = ft_atoi(str1);
-	printf("num1 = %d\n", num1);
-
+	char *res = ft_strdup(string);
+	printf("%s", res);
 	return (0);
 } */

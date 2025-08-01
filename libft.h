@@ -6,7 +6,7 @@
 /*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 21:13:13 by rdamasce          #+#    #+#             */
-/*   Updated: 2025/07/29 20:44:21 by rdamasce         ###   ########.fr       */
+/*   Updated: 2025/08/01 19:36:23 by rdamasce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <string.h>
+# include <stdio.h>
 
 void	*ft_memset(void *str, int c, size_t n);
 int		ft_isalnum(int numc);
