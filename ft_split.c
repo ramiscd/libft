@@ -6,28 +6,58 @@
 /*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 20:58:54 by rdamasce          #+#    #+#             */
-/*   Updated: 2025/08/04 22:01:35 by rdamasce         ###   ########.fr       */
+/*   Updated: 2025/08/05 21:59:37 by rdamasce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+
 char **ft_split(char const *s, char c)
 {
-	static char *s1[] = {"ola", "mundo", "bonito", NULL};
-
-	int count = 1;
+	int count = 0;
 	int i = 0;
+	int end = 0;
+	char **res;
+	int j;
+	int inicio;
 
+	inicio = -1;
+	j = 0;
+
+	// conta quantas palavras terá (versao simplificada)
 	while (s[i] != '\0')
 	{
-		if (s[i] == c)
+		if ((i == 0 || s[i - 1] == c) && s[i] != c)
 			count++;
 		i++;
 	}
-	printf("%i\n", count);
 
-	return (s1);
+	// aloca memoria para res baseado na quantidade de palvras
+	res = malloc(sizeof(char *) * (count + 1 ));
+	if(!res)
+		return (NULL);
+
+	i= 0;
+	
+	while (s[i])	
+	{
+		if ((i == 0 || s[i -1] == c) && s[i] != c)
+			inicio = i;
+
+		if ((s[i + 1] == c || s[i + 1] == '\0') && inicio != -1)
+		{
+			end = i;
+			res[j] = ft_substr(s, inicio, end - inicio + 1);
+			j++;
+			inicio = -1; // reseta para proxima palavra
+		}
+		i++;
+	}
+
+	res[j] = NULL;
+	return (res);
 }
 
 int main(void)
