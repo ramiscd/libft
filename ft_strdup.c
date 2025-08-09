@@ -6,7 +6,7 @@
 /*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/01 19:10:20 by rdamasce          #+#    #+#             */
-/*   Updated: 2025/08/01 19:47:22 by rdamasce         ###   ########.fr       */
+/*   Updated: 2025/08/08 20:33:44 by rdamasce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strdup(const char *string)
 	int		i;
 
 	i = 0;
-	ptr = (char *) malloc(ft_strlen((char *)string) * sizeof(char));
+	ptr = (char *) malloc(ft_strlen((char *)string) * sizeof(char) + 1);
 	if (ptr == NULL)
 	{
 		return (NULL);
@@ -31,6 +31,7 @@ char	*ft_strdup(const char *string)
 			i++;
 		}
 	}
+	ptr[i] = '\0';
 	return (ptr);
 }
 

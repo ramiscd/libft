@@ -6,61 +6,77 @@
 /*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 20:58:54 by rdamasce          #+#    #+#             */
-/*   Updated: 2025/08/05 21:59:37 by rdamasce         ###   ########.fr       */
+/*   Updated: 2025/08/07 22:36:57 by rdamasce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len);
-
-char **ft_split(char const *s, char c)
+static size_t	count_words(char const *str, char c)
 {
-	int count = 0;
-	int i = 0;
-	int end = 0;
-	char **res;
-	int j;
-	int inicio;
+	int	i;
+	int	len;
 
-	inicio = -1;
-	j = 0;
-
-	// conta quantas palavras terá (versao simplificada)
-	while (s[i] != '\0')
+	i = 0;
+	len = 0;
+	while (str[i])
 	{
-		if ((i == 0 || s[i - 1] == c) && s[i] != c)
-			count++;
-		i++;
-	}
-
-	// aloca memoria para res baseado na quantidade de palvras
-	res = malloc(sizeof(char *) * (count + 1 ));
-	if(!res)
-		return (NULL);
-
-	i= 0;
-	
-	while (s[i])	
-	{
-		if ((i == 0 || s[i -1] == c) && s[i] != c)
-			inicio = i;
-
-		if ((s[i + 1] == c || s[i + 1] == '\0') && inicio != -1)
+		if (str[i] != c)
 		{
-			end = i;
-			res[j] = ft_substr(s, inicio, end - inicio + 1);
-			j++;
-			inicio = -1; // reseta para proxima palavra
+			len++;
+			i++;
+			while (str[i] != c && str[i])
+				i++;
 		}
-		i++;
+		else
+			i++;
 	}
-
-	res[j] = NULL;
-	return (res);
+	return (len);
 }
 
-int main(void)
+static char	**free_spl(char **spl)
+{
+	size_t	i;
+
+	i = 0;
+	if (!spl)
+		return (0);
+	while (spl[i])
+		free (spl[i++]);
+	free (spl);
+	return (0);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**spl;
+	size_t	i;
+	size_t	start;
+	size_t	word;
+
+	spl = malloc((count_words(s, c) + 1) * sizeof(char *));
+	if (!spl)
+		return (NULL);
+	i = 0;
+	word = 0;
+	while (s[i])
+	{
+		while (s[i] == c && s[i])
+			i++;
+		start = i;
+		while (s[i] != c && s[i])
+			i++;
+		if (i > start)
+		{
+			spl[word] = ft_substr(s, start, i - start);
+			if (!spl[word++])
+				return (free_spl(spl));
+		}
+	}
+	return (spl[word] = NULL, spl);
+}
+
+/* int main(void)
 {
 	char *s = "ola mundo bonito";
 	char c = ' ';
@@ -73,4 +89,4 @@ int main(void)
 		i++;
 	}
 	return (0);
-}
+} */

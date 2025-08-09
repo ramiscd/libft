@@ -6,11 +6,13 @@
 /*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 19:32:23 by rdamasce          #+#    #+#             */
-/*   Updated: 2025/07/24 21:10:33 by rdamasce         ###   ########.fr       */
+/*   Updated: 2025/08/08 19:21:18 by rdamasce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+#include "libft.h"
+
+size_t	ft_strlen(const char *str)
 {
 	int	i;
 

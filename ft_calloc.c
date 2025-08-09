@@ -6,32 +6,27 @@
 /*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/01 19:56:34 by rdamasce          #+#    #+#             */
-/*   Updated: 2025/08/01 20:22:13 by rdamasce         ###   ########.fr       */
+/*   Updated: 2025/08/07 22:38:37 by rdamasce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
-void *ft_calloc(size_t nitem, size_t size)
+void	*ft_calloc(size_t nitem, size_t size)
 {
-	int *ptr;
-	int i;
+	size_t	i;
+	char	*ptr;
 
-	ptr = (int *) malloc(nitem * size);
-
-	if (ptr == NULL)
-	{
+	ptr = (char *)malloc(nitem * size);
+	if (!ptr)
 		return (NULL);
-	}
-	else
+	i = 0;
+	while (i < nitem * size)
 	{
-		while (i <= nitem)
-		{
-			ptr[i] = 0;
-		}
+		ptr[i] = 0;
+		i++;
 	}
-	return ((void *) ptr);
+	return ((void *)ptr);
 }
 
 /* int main() {

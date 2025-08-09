@@ -6,7 +6,7 @@
 /*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/01 20:45:45 by rdamasce          #+#    #+#             */
-/*   Updated: 2025/08/05 22:04:04 by rdamasce         ###   ########.fr       */
+/*   Updated: 2025/08/07 21:47:59 by rdamasce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,19 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*ptr;
-	size_t	i;
+	char			*str;
+	size_t			max_len;
 
-	if (!s)
-		return (NULL);
-
-	// Se start passar do tamanho da string, retorna string vazia
-	if (start >= ft_strlen(s))
+	if (start > ft_strlen(s))
 		return (ft_strdup(""));
-
-	ptr = malloc(len + 1);
-	if (!ptr)
+	max_len = ft_strlen(s) - start;
+	if (len < max_len)
+		max_len = len;
+	str = (char *) malloc((max_len + 1) * sizeof(char));
+	if (!str)
 		return (NULL);
-
-	i = 0;
-	while (i < len && s[start + i] != '\0')
-	{
-		ptr[i] = s[start + i];
-		i++;
-	}
-	ptr[i] = '\0';  // termina a string
-
-	return (ptr);
+	ft_strlcpy(str, s + start, max_len + 1);
+	return (str);
 }
 
 /* int main(void)

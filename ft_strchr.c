@@ -6,7 +6,7 @@
 /*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 20:31:54 by rdamasce          #+#    #+#             */
-/*   Updated: 2025/07/24 23:04:22 by rdamasce         ###   ########.fr       */
+/*   Updated: 2025/08/08 19:42:28 by rdamasce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,10 @@ char	*ft_strchr(const char *string, int c)
 			return ((char *)ptr);
 		}
 		ptr++;
+	}
+	if (*ptr == c)
+	{
+		return ((char *)ptr);
 	}
 	return (NULL);
 }

@@ -6,12 +6,11 @@
 /*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 21:09:06 by rdamasce          #+#    #+#             */
-/*   Updated: 2025/07/24 21:09:08 by rdamasce         ###   ########.fr       */
+/*   Updated: 2025/08/08 21:55:20 by rdamasce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
