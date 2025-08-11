@@ -6,7 +6,7 @@
 /*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 21:13:13 by rdamasce          #+#    #+#             */
-/*   Updated: 2025/08/11 19:26:18 by rdamasce         ###   ########.fr       */
+/*   Updated: 2025/08/11 20:14:47 by rdamasce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strdup(const char *string);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);
 char	*ft_itoa(int n);
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 #endif
