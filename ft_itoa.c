@@ -3,62 +3,73 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: youvisa <youvisa@student.42.fr>            +#+  +:+       +#+        */
+/*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 14:12:17 by youvisa           #+#    #+#             */
-/*   Updated: 2025/08/10 18:48:02 by youvisa          ###   ########.fr       */
+/*   Updated: 2025/08/11 19:24:19 by rdamasce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_itoa(int n)
+static char	*ft_itoa_zero(void)
 {
-    char *res;
-    int len = 0;
-    long num = n;
-    int negative = 0;
+	char	*res;
 
-    if (n == 0)
-    {
-        res = malloc(2);
-        res[0] = '0';
-        res[1] = '\0';
-        return res;
-    }
-
-    if (num < 0)
-    {
-        negative = 1;
-        num = -num;
-    }
-
-    long tmp = num;
-    while (tmp > 0)
-    {
-        tmp /= 10;
-        len++;
-    }
-
-    res = malloc(len + negative + 1);
-    res[len + negative] = '\0'; 
-
-    while (len > 0)
-    {
-        res[len + negative - 1] = (num % 10) + '0';
-        num /= 10;
-        len--;
-    }
-
-    if (negative)
-        res[0] = '-';
-
-    return (res);
+	res = malloc(2);
+	res[0] = '0';
+	res[1] = '\0';
+	return (res);
 }
 
-int main(void)
+static int	ft_count_digits(long n)
 {
-  int n = -1237642;
-  char *res = ft_itoa(n);
-  printf("%s \n", res);
+	int	len;
+
+	len = 0;
+	if (n == 0)
+		return (1);
+	while (n > 0)
+	{
+		n /= 10;
+		len++;
+	}
+	return (len);
 }
+
+char	*ft_itoa(int n)
+{
+	int		len;
+	long	num;
+	int		negative;
+	char	*res;
+
+	num = n;
+	if (n == 0)
+		return (ft_itoa_zero());
+	if (num < 0)
+	{
+		negative = 1;
+		num = -num;
+	}
+	len = ft_count_digits(num);
+	res = malloc(len + negative + 1);
+	res[len + negative] = '\0';
+	while (len > 0)
+	{
+		res[len + negative - 1] = (num % 10) + '0';
+		num /= 10;
+		len--;
+	}
+	if (negative)
+		res[0] = '-';
+	return (res);
+}
+
+/* int	main(void)
+{
+	int		n = -1237642;
+	char	*res = ft_itoa(n);
+
+	printf("%s \n", res);
+} */
