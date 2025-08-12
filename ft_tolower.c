@@ -6,9 +6,11 @@
 /*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 20:29:51 by rdamasce          #+#    #+#             */
-/*   Updated: 2025/07/18 20:40:53 by rdamasce         ###   ########.fr       */
+/*   Updated: 2025/08/11 22:36:16 by rdamasce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	ft_tolower(char c)
 {

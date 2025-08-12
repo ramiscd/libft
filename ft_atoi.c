@@ -6,12 +6,11 @@
 /*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 21:04:42 by rdamasce          #+#    #+#             */
-/*   Updated: 2025/08/11 22:31:57 by rdamasce         ###   ########.fr       */
+/*   Updated: 2025/08/11 22:34:58 by rdamasce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 int	ft_atoi(const char *str)
 {

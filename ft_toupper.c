@@ -6,9 +6,11 @@
 /*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 20:20:31 by rdamasce          #+#    #+#             */
-/*   Updated: 2025/07/24 21:11:05 by rdamasce         ###   ########.fr       */
+/*   Updated: 2025/08/11 22:36:21 by rdamasce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	ft_toupper(char c)
 {

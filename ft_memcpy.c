@@ -6,12 +6,11 @@
 /*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 20:02:51 by rdamasce          #+#    #+#             */
-/*   Updated: 2025/07/24 21:12:47 by rdamasce         ###   ########.fr       */
+/*   Updated: 2025/08/11 22:35:33 by rdamasce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
 void	*ft_memcpy(void *dest_str, const void *src_str, size_t n)
 {

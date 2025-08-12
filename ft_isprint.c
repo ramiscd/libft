@@ -6,9 +6,11 @@
 /*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 20:11:19 by rdamasce          #+#    #+#             */
-/*   Updated: 2025/07/24 21:08:57 by rdamasce         ###   ########.fr       */
+/*   Updated: 2025/08/11 22:35:25 by rdamasce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isprint(int prt)
 {

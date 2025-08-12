@@ -6,11 +6,11 @@
 /*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 19:48:17 by rdamasce          #+#    #+#             */
-/*   Updated: 2025/07/17 20:08:01 by rdamasce         ###   ########.fr       */
+/*   Updated: 2025/08/11 22:35:17 by rdamasce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int c);
+#include "libft.h"
 
 int	ft_isascii(int c)
 {

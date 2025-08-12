@@ -6,12 +6,10 @@
 /*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/25 21:14:59 by rdamasce          #+#    #+#             */
-/*   Updated: 2025/07/29 20:36:43 by rdamasce         ###   ########.fr       */
+/*   Updated: 2025/08/11 22:36:03 by rdamasce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
 #include "libft.h"
 
 size_t	ft_strlcat(char *dest, const char *src, size_t size)

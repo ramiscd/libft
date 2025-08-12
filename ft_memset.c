@@ -6,12 +6,11 @@
 /*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 20:44:37 by rdamasce          #+#    #+#             */
-/*   Updated: 2025/07/24 21:10:13 by rdamasce         ###   ########.fr       */
+/*   Updated: 2025/08/11 22:35:38 by rdamasce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memset(void *str, int c, size_t n)
 {
