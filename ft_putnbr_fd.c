@@ -1,43 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/21 19:31:33 by rdamasce          #+#    #+#             */
-/*   Updated: 2025/08/11 22:05:16 by rdamasce         ###   ########.fr       */
+/*   Created: 2025/08/11 21:37:00 by rdamasce          #+#    #+#             */
+/*   Updated: 2025/08/11 21:53:20 by rdamasce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* void	*ft_memset(void *str, int c, size_t n)
+void	ft_putnbr_fd(int n, int fd)
 {
-	unsigned char	*pstr;
-	unsigned int	i;
+	long	nb;
 
-	pstr = str;
-	i = 0;
-	while (i < n)
+	nb = n;
+	if (nb < 0)
 	{
-		pstr[i] = c;
-		i++;
+		ft_putchar_fd('-', fd);
+		nb = -nb;
 	}
-	return (str);
-} */
-
-void	ft_bzero(void *s, size_t nbyte)
-{
-	ft_memset(s, 0, nbyte);
+	if (nb >= 0 && nb <= 9)
+		ft_putchar_fd(nb + '0', fd);
+	else
+	{
+		ft_putnbr_fd(nb / 10, fd);
+		ft_putchar_fd((nb % 10) + '0', fd);
+	}
 }
 
-/* int main(void) {
-  char str[] = "This is a string";
-  printf("Antes: %s\n", str);
-
-  ft_bzero(str, 6);
-  printf("Depois: %s\n", str);
-
-  return 0;
+/* int	main(void)
+{
+	ft_putnbr_fd(-1234, 1);
+	return (0);
 } */

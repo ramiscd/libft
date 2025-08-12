@@ -1,43 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/21 19:31:33 by rdamasce          #+#    #+#             */
-/*   Updated: 2025/08/11 22:05:16 by rdamasce         ###   ########.fr       */
+/*   Created: 2025/08/11 20:54:46 by rdamasce          #+#    #+#             */
+/*   Updated: 2025/08/11 21:06:10 by rdamasce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* void	*ft_memset(void *str, int c, size_t n)
+void	ft_putstr_fd(char *s, int fd)
 {
-	unsigned char	*pstr;
-	unsigned int	i;
+	int	i;
 
-	pstr = str;
 	i = 0;
-	while (i < n)
+	if (!s)
+		return ;
+	while (s[i] != '\0')
 	{
-		pstr[i] = c;
+		ft_putchar_fd(s[i], fd);
 		i++;
 	}
-	return (str);
-} */
-
-void	ft_bzero(void *s, size_t nbyte)
-{
-	ft_memset(s, 0, nbyte);
 }
 
-/* int main(void) {
-  char str[] = "This is a string";
-  printf("Antes: %s\n", str);
-
-  ft_bzero(str, 6);
-  printf("Depois: %s\n", str);
-
-  return 0;
+/* int	main(void)
+{
+	char *s = "hello modafoca";
+	ft_putstr_fd(s, 1);
+	return (0);
 } */

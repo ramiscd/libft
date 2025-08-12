@@ -6,14 +6,14 @@
 /*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 21:04:42 by rdamasce          #+#    #+#             */
-/*   Updated: 2025/08/01 19:50:01 by rdamasce         ###   ########.fr       */
+/*   Updated: 2025/08/11 22:31:57 by rdamasce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	unsigned int	i;
 	int				signal;
@@ -22,10 +22,9 @@ int	ft_atoi(char *str)
 	i = 0;
 	signal = 1;
 	res = 0;
-	if (str[i] == ' ' || str[i] == '\t' || str[i] == '\n')
-	{
-		i++;
-	}
+	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
+		|| str[i] == '\r' || str[i] == '\v' || str[i] == '\f')
+			i++;
 	if (str[i] == '+' || str[i] == '-')
 	{
 		if (str[i] == '-')

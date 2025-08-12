@@ -6,17 +6,17 @@
 /*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 22:10:08 by rdamasce          #+#    #+#             */
-/*   Updated: 2025/07/24 23:01:50 by rdamasce         ###   ########.fr       */
+/*   Updated: 2025/08/11 22:32:42 by rdamasce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
-char	*ft_strstr(const char *string, int c)
+char	*ft_strrchr(const char *string, int c)
 {
 	char	*ptr;
 
+	ptr = NULL;
 	while (*string)
 	{
 		if (*string == c)
@@ -40,6 +40,6 @@ char	*ft_strstr(const char *string, int c)
 	char str[] = "minha string";
 	int c = 'i';
 
-	char *res = ft_strstr(str, c);
+	char *res = ft_strrchr(str, c);
 	printf("O último caractere da str: \"%s\" é %s \n" , str, res);
 } */
