@@ -6,7 +6,7 @@
 /*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 21:13:13 by rdamasce          #+#    #+#             */
-/*   Updated: 2025/08/11 22:28:51 by rdamasce         ###   ########.fr       */
+/*   Updated: 2025/08/12 18:21:01 by rdamasce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@
 # include <unistd.h>
 # include <string.h>
 # include <stdio.h>
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
 
 void	ft_bzero(void *s, size_t nbyte);
 void	*ft_memmove(void *dest, const void *src, size_t count);
@@ -53,5 +59,6 @@ void	*ft_calloc(size_t nitem, size_t size);
 char	*ft_strjoin(char *s1, char *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
+t_list	*ft_lstnew(void *content);
 
 #endif
