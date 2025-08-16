@@ -6,7 +6,7 @@
 /*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 21:13:13 by rdamasce          #+#    #+#             */
-/*   Updated: 2025/08/14 23:16:50 by rdamasce         ###   ########.fr       */
+/*   Updated: 2025/08/15 20:51:40 by rdamasce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-# include <string.h>
-# include <stdio.h>
 
 typedef struct s_list
 {

@@ -6,16 +6,11 @@
 /*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 22:33:45 by rdamasce          #+#    #+#             */
-/*   Updated: 2025/08/14 23:02:08 by rdamasce         ###   ########.fr       */
+/*   Updated: 2025/08/15 20:54:55 by rdamasce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/* 
-void	del(void *content)
-{
-	free(content);
-} */
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
