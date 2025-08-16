@@ -6,7 +6,7 @@
 /*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 14:12:17 by youvisa           #+#    #+#             */
-/*   Updated: 2025/08/11 19:24:19 by rdamasce         ###   ########.fr       */
+/*   Updated: 2025/08/15 23:19:18 by rdamasce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ char	*ft_itoa(int n)
 	int		negative;
 	char	*res;
 
+	negative = 0;
 	num = n;
 	if (n == 0)
 		return (ft_itoa_zero());
@@ -54,6 +55,8 @@ char	*ft_itoa(int n)
 	}
 	len = ft_count_digits(num);
 	res = malloc(len + negative + 1);
+	if (!res)
+		return (NULL);
 	res[len + negative] = '\0';
 	while (len > 0)
 	{

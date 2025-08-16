@@ -6,7 +6,7 @@
 /*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 20:02:51 by rdamasce          #+#    #+#             */
-/*   Updated: 2025/08/11 22:35:33 by rdamasce         ###   ########.fr       */
+/*   Updated: 2025/08/15 22:56:23 by rdamasce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memcpy(void *dest_str, const void *src_str, size_t n)
 	const unsigned char	*s;
 	size_t				i;
 
+	if (!dest_str && !src_str)
+		return (dest_str);
 	d = (unsigned char *)dest_str;
 	s = (unsigned const char *)src_str;
 	i = 0;

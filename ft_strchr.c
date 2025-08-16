@@ -6,7 +6,7 @@
 /*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 20:31:54 by rdamasce          #+#    #+#             */
-/*   Updated: 2025/08/11 22:35:55 by rdamasce         ###   ########.fr       */
+/*   Updated: 2025/08/15 22:19:54 by rdamasce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,17 @@
 
 char	*ft_strchr(const char *string, int c)
 {
-	unsigned char	*ptr;
+	unsigned char	uc;
 
-	ptr = (unsigned char *)string;
-	while (*ptr != 0)
+	uc = (unsigned char)c;
+	while (*string)
 	{
-		if (*ptr == c)
-		{
-			return ((char *)ptr);
-		}
-		ptr++;
+		if ((unsigned char)*string == uc)
+			return ((char *)string);
+		string++;
 	}
-	if (*ptr == c)
-	{
-		return ((char *)ptr);
-	}
+	if ((unsigned char)*string == uc)
+		return ((char *)string);
 	return (NULL);
 }
 

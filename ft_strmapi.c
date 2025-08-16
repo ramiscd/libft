@@ -6,7 +6,7 @@
 /*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 19:29:29 by rdamasce          #+#    #+#             */
-/*   Updated: 2025/08/11 20:15:24 by rdamasce         ###   ########.fr       */
+/*   Updated: 2025/08/15 21:11:33 by rdamasce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	i = 0;
 	if (s == NULL || f == NULL)
 		return (NULL);
-	len = strlen(s);
+	len = ft_strlen(s);
 	new = malloc(len + 1);
 	if (new == NULL)
 		return (NULL);

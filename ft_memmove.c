@@ -6,7 +6,7 @@
 /*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/25 19:05:05 by rdamasce          #+#    #+#             */
-/*   Updated: 2025/08/11 22:21:14 by rdamasce         ###   ########.fr       */
+/*   Updated: 2025/08/15 23:24:10 by rdamasce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memmove(void *dest, const void *src, size_t count)
 	const unsigned char	*psrc;
 	size_t				i;
 
+	if (!dest && !src)
+		return (dest);
 	pdest = (unsigned char *)dest;
 	psrc = (const unsigned char *)src;
 	i = 0;

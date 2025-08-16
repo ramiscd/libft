@@ -6,7 +6,7 @@
 /*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 22:05:55 by rdamasce          #+#    #+#             */
-/*   Updated: 2025/08/14 22:17:30 by rdamasce         ###   ########.fr       */
+/*   Updated: 2025/08/15 22:47:16 by rdamasce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,9 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		return ;
 	}
 	last = ft_lstlast(*lst);
+	if (!last)
+		return ;
 	last->next = new;
-	new->next = NULL;
 }
 
 /* int	main(void)

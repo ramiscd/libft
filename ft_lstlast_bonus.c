@@ -6,7 +6,7 @@
 /*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 21:22:19 by rdamasce          #+#    #+#             */
-/*   Updated: 2025/08/14 21:39:18 by rdamasce         ###   ########.fr       */
+/*   Updated: 2025/08/15 21:10:55 by rdamasce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ t_list	*ft_lstlast(t_list *lst)
 		return (NULL);
 	while (lst->next != NULL)
 	{
-		printf("\nlst content em cada iteração: %i\n", *(int *)lst->content);
 		lst = lst->next;
 	}
 	return (lst);
